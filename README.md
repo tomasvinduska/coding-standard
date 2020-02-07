@@ -14,4 +14,3 @@ additionaly you can add this to simplify commands calling
     "coding-fix": "./vendor/bin/phpcbf --standard=vendor/tomasvinduska/coding-standard/src/ruleset.xml --ignore=vendor/*,temp/* --extensions=php --tab-width=4 -p ."
   }
 ```
-
