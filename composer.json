@@ -7,7 +7,7 @@
   "require": {
     "php": ">=7.4",
     "slevomat/coding-standard": "@stable",
-    "jakub-onderka/php-parallel-lint": "@stable",
+    "php-parallel-lint/php-parallel-lint": "@stable",
     "phpmd/phpmd" : "@stable"
   }
 }
