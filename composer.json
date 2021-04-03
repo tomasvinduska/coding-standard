@@ -5,7 +5,7 @@
   "minimum-stability": "stable",
   "prefer-stable": true,
   "require": {
-    "php": ">=7.4",
+    "php": ">=8.0",
     "slevomat/coding-standard": "@stable",
     "php-parallel-lint/php-parallel-lint": "@stable",
     "phpmd/phpmd" : "@stable"
