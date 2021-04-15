@@ -231,7 +231,7 @@
     <!-- ########################################################################################################### -->
     <!-- Slevomat Coding Standard + Doctrine Coding Standard -->
     <!-- ########################################################################################################### -->
-    <rule ref="../../../../vendor/slevomat/coding-standard/SlevomatCodingStandard/ruleset.xml">
+    <rule ref="../../../vendor/slevomat/coding-standard/SlevomatCodingStandard/ruleset.xml">
         <exclude name="SlevomatCodingStandard.Commenting.DisallowOneLinePropertyDocComment.OneLinePropertyComment"/>
         <exclude name="SlevomatCodingStandard.Commenting.UselessInheritDocComment.UselessInheritDocComment"/>
         <exclude name="SlevomatCodingStandard.Files.TypeNameMatchesFileName"/>
@@ -246,7 +246,6 @@
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming.SuperfluousSuffix"/>
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming.SuperfluousPrefix"/>
         <exclude name="SlevomatCodingStandard.ControlStructures.AssignmentInCondition.AssignmentInCondition"/>
-        <exclude name="SlevomatCodingStandard.ControlStructures.DisallowShortTernaryOperator.DisallowedShortTernaryOperator"/>
         <exclude name="SlevomatCodingStandard.ControlStructures.DisallowEmpty.DisallowedEmpty"/>
         <exclude name="SlevomatCodingStandard.ControlStructures.EarlyExit"/>
         <exclude name="SlevomatCodingStandard.ControlStructures.EarlyExit.EarlyExitNotUsed"/>
@@ -309,7 +308,7 @@
     <rule ref="SlevomatCodingStandard.Commenting.RequireOneLinePropertyDocComment"/>
     <rule ref="SlevomatCodingStandard.ControlStructures.AssignmentInCondition"/>
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison"/>
-    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowEqualOperators"/>
+    <rule ref="SlevomatCodingStandard.Operators.DisallowEqualOperators"/>
     <rule ref="SlevomatCodingStandard.ControlStructures.EarlyExit"/>
     <rule ref="SlevomatCodingStandard.ControlStructures.LanguageConstructWithParentheses"/>
     <rule ref="SlevomatCodingStandard.ControlStructures.NewWithParentheses"/>
@@ -350,9 +349,10 @@
     <rule ref="SlevomatCodingStandard.PHP.TypeCast"/>
     <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
         <properties>
-            <property name="newlinesCountBetweenOpenTagAndDeclare" value="0"/>
+            <property name="linesCountBeforeDeclare" value="0"/>
             <property name="spacesCountAroundEqualsSign" value="1"/>
-            <property name="newlinesCountAfterDeclare" value="2"/>
+            <property name="linesCountAfterDeclare" value="1"/>
+            <property name="declareOnFirstLine" value="true"/>
         </properties>
     </rule>
     <rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints"/>
@@ -363,17 +363,22 @@
             <property name="spacesCountBeforeColon" value="0"/>
         </properties>
     </rule>
-    <rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration">
+    <rule ref="SlevomatCodingStandard.Functions.DisallowNamedArguments"/>
+    <rule ref="SlevomatCodingStandard.Classes.RequireConstructorPropertyPromotion"/>
+    <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInDeclaration"/>
+    <rule ref="SlevomatCodingStandard.ControlStructures.RequireNullSafeObjectOperator"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.UnionTypeHintFormat">
         <properties>
-            <property name="enableEachParameterAndReturnInspection" value="true"/>
-            <property name="allAnnotationsAreUseful" value="true"/>
+            <property name="withSpaces" value="yes"/>
+            <property name="shortNullable" value="no"/>
+            <property name="nullPosition" value="last"/>
         </properties>
     </rule>
-    <rule ref="SlevomatCodingStandard.Types.EmptyLinesAroundTypeBraces">
+    <rule ref="SlevomatCodingStandard.Classes.RequireMultiLineMethodSignature">
         <properties>
-            <property name="linesCountAfterOpeningBrace" value="1"/>
-            <property name="linesCountBeforeClosingBrace" value="1"/>
+            <property name="minLineLength" value="0"/>
+            <property name="includedMethodPatterns" type="array" value="(__construct)"/>
         </properties>
     </rule>
-    <ini name="memory_limit" value="164M"/>
+<!--    <ini name="memory_limit" value="164M"/>-->
 </ruleset>
