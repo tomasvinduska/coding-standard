@@ -175,9 +175,10 @@
         <message>Function has no return statement, but annotation @return is present</message>
     </rule>
     <rule ref="Squiz.Commenting.VariableComment">
-        <exclude
-                name="Squiz.Commenting.VariableComment.IncorrectVarType"/><!-- don't force int=>integer, bool=>boolean -->
+        <exclude name="Squiz.Commenting.VariableComment.IncorrectVarType"/><!-- don't force int=>integer, bool=>boolean -->
         <exclude name="Squiz.Commenting.VariableComment.TagNotAllowed"/>
+        <exclude name="Squiz.Commenting.VariableComment.MissingVar"/><!-- no need for typed properties -->
+        <exclude name="Squiz.Commenting.VariableComment.Missing"/><!-- no need for typed properties -->
     </rule>
     <rule ref="Squiz.Functions.GlobalFunction"/>
     <rule ref="Squiz.Operators.ValidLogicalOperators"/>
@@ -255,6 +256,12 @@
         <exclude name="SlevomatCodingStandard.PHP.UselessParentheses.UselessParentheses"/>
         <exclude name="SlevomatCodingStandard.Variables.UnusedVariable.UnusedVariable"/>
         <exclude name="SlevomatCodingStandard.Variables.UselessVariable.UselessVariable"/>
+        <exclude name="SlevomatCodingStandard.Classes.RequireSingleLineMethodSignature"/>
+        <exclude name="SlevomatCodingStandard.Classes.DisallowConstructorPropertyPromotion"/>
+        <exclude name="SlevomatCodingStandard.Functions.DisallowTrailingCommaInCall"/>
+        <exclude name="SlevomatCodingStandard.Functions.DisallowTrailingCommaInDeclaration"/>
+        <exclude name="SlevomatCodingStandard.Functions.DisallowEmptyFunction"/>
+        <exclude name="SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint"/>
     </rule>
     <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
         <properties>
@@ -372,6 +379,11 @@
             <property name="withSpaces" value="yes"/>
             <property name="shortNullable" value="no"/>
             <property name="nullPosition" value="last"/>
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.Files.FunctionLength">
+        <properties>
+            <property name="maxLinesLength" value="40"/>
         </properties>
     </rule>
     <rule ref="SlevomatCodingStandard.Classes.RequireMultiLineMethodSignature">
